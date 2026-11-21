@@ -1,0 +1,15 @@
+includes:
+    - vendor/szepeviktor/phpstan-wordpress/extension.neon
+
+parameters:
+    level: 6
+    paths:
+        - includes
+    bootstrapFiles:
+        - vendor/php-stubs/wordpress-stubs/wordpress-stubs.php
+        - vendor/php-stubs/woocommerce-stubs/woocommerce-stubs.php
+    ignoreErrors:
+        - '#Constant WPILOT_AI_VERSION not found#'
+        - '#Constant WPILOT_AI_DIR not found#'
+        - '#Constant WPILOT_AI_URL not found#'
+        - '#Constant WPILOT_AI_FILE not found#'

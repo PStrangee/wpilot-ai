@@ -1,0 +1,278 @@
+/* WPilot AI WordPress Admin Interface Styles (Light, Dark & RTL Ready) */
+.wpilot-app {
+  --wpilot-bg: #f8fafc;
+  --wpilot-surface: #ffffff;
+  --wpilot-surface-alt: #f1f5f9;
+  --wpilot-border: #e2e8f0;
+  --wpilot-text: #0f172a;
+  --wpilot-muted: #64748b;
+  --wpilot-accent: #2563eb;
+  --wpilot-accent-hover: #1d4ed8;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Vazirmatn, sans-serif;
+  background: var(--wpilot-bg);
+  color: var(--wpilot-text);
+  border: 1px solid var(--wpilot-border);
+  border-radius: 12px;
+  padding: 20px;
+  margin-top: 16px;
+}
+
+.wpilot-app.wpilot-dark {
+  --wpilot-bg: #0b1120;
+  --wpilot-surface: #111827;
+  --wpilot-surface-alt: #1e293b;
+  --wpilot-border: #1f2937;
+  --wpilot-text: #f8fafc;
+  --wpilot-muted: #94a3b8;
+}
+
+.wpilot-header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid var(--wpilot-border);
+}
+
+.wpilot-title {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--wpilot-text);
+}
+
+.wpilot-subtitle,
+.wpilot-muted {
+  margin: 4px 0 0;
+  font-size: 13px;
+  color: var(--wpilot-muted);
+}
+
+.wpilot-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+}
+
+.wpilot-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin: 14px 0;
+}
+
+.wpilot-tab {
+  padding: 8px 14px;
+  border-radius: 8px;
+  border: 1px solid var(--wpilot-border);
+  background: var(--wpilot-surface);
+  color: var(--wpilot-muted);
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.wpilot-tab.is-active {
+  background: var(--wpilot-accent);
+  border-color: var(--wpilot-accent);
+  color: #ffffff;
+  font-weight: 600;
+}
+
+.wpilot-notice {
+  padding: 10px 14px;
+  margin-bottom: 14px;
+  border-radius: 8px;
+  border: 1px solid var(--wpilot-border);
+  background: var(--wpilot-surface-alt);
+  font-size: 13px;
+}
+
+.wpilot-panel {
+  background: var(--wpilot-surface);
+  border: 1px solid var(--wpilot-border);
+  border-radius: 10px;
+  padding: 18px;
+}
+
+.wpilot-panel-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+
+.wpilot-messages {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  min-height: 360px;
+  max-height: 540px;
+  overflow-y: auto;
+  margin-bottom: 14px;
+}
+
+.wpilot-msg {
+  max-width: 780px;
+  padding: 12px 15px;
+  border-radius: 10px;
+  font-size: 13.5px;
+  line-height: 1.6;
+}
+
+.wpilot-msg-user {
+  align-self: flex-end;
+  background: var(--wpilot-accent);
+  color: #ffffff;
+}
+
+.wpilot-msg-assistant {
+  align-self: flex-start;
+  background: var(--wpilot-surface-alt);
+  border: 1px solid var(--wpilot-border);
+  color: var(--wpilot-text);
+}
+
+.wpilot-msg-meta {
+  font-size: 11px;
+  opacity: 0.75;
+  margin-bottom: 4px;
+}
+
+.wpilot-msg-body {
+  white-space: pre-wrap;
+}
+
+.wpilot-tool-list,
+.wpilot-task-list,
+.wpilot-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.wpilot-tool-item,
+.wpilot-audit-row {
+  font-size: 12px;
+  padding: 6px 10px;
+  border-radius: 6px;
+  background: var(--wpilot-surface);
+  border: 1px solid var(--wpilot-border);
+}
+
+.wpilot-task-card {
+  padding: 12px;
+  border-radius: 8px;
+  background: var(--wpilot-surface);
+  border: 1px solid var(--wpilot-border);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.wpilot-code {
+  margin: 0;
+  padding: 10px;
+  border-radius: 6px;
+  background: #0f172a;
+  color: #e2e8f0;
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 12px;
+  overflow-x: auto;
+  text-align: left;
+}
+
+.wpilot-composer {
+  display: flex;
+  gap: 10px;
+  align-items: flex-end;
+}
+
+.wpilot-textarea {
+  flex: 1;
+  min-height: 58px;
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 1px solid var(--wpilot-border);
+  background: var(--wpilot-bg);
+  color: var(--wpilot-text);
+  font-size: 13.5px;
+}
+
+.wpilot-btn {
+  padding: 8px 14px;
+  border-radius: 8px;
+  border: 1px solid var(--wpilot-border);
+  background: var(--wpilot-surface-alt);
+  color: var(--wpilot-text);
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.wpilot-btn-primary {
+  background: var(--wpilot-accent);
+  border-color: var(--wpilot-accent);
+  color: #ffffff;
+  font-weight: 600;
+}
+
+.wpilot-btn-primary:hover {
+  background: var(--wpilot-accent-hover);
+}
+
+.wpilot-btn:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+.wpilot-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 14px;
+}
+
+.wpilot-card {
+  background: var(--wpilot-surface-alt);
+  border: 1px solid var(--wpilot-border);
+  border-radius: 8px;
+  padding: 14px;
+}
+
+.wpilot-form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  max-width: 520px;
+  margin-top: 14px;
+}
+
+.wpilot-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.wpilot-field input,
+.wpilot-field select {
+  padding: 8px 10px;
+  border-radius: 7px;
+  border: 1px solid var(--wpilot-border);
+  background: var(--wpilot-bg);
+  color: var(--wpilot-text);
+  font-size: 13px;
+}
+
+.wpilot-checkbox {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+}

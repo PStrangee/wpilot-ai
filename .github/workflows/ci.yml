@@ -1,0 +1,48 @@
+name: WPilot AI CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  php-quality:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.2'
+          extensions: sodium, openssl, json
+          tools: composer:v2
+      - name: Install Composer dependencies
+        run: composer install --no-interaction --prefer-dist
+      - name: Run PHP syntax lint
+        run: composer lint
+      - name: Run PHPUnit security and unit tests
+        run: composer test
+      - name: Run PHPStan static analysis
+        run: composer stan
+      - name: Run PHP_CodeSniffer (WPCS)
+        run: composer cs
+
+  frontend-quality:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install frontend dependencies
+        run: npm install --no-audit --no-fund
+      - name: Run TypeScript typecheck
+        run: npm run lint
+      - name: Run frontend unit tests
+        run: npm test
+      - name: Build WordPress Admin React bundle
+        run: npm run build
+      - name: Verify built assets exist and are non-empty
+        run: |
+          test -s assets/build/admin.js
+          test -s assets/build/admin.css
